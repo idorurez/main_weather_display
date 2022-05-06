@@ -1,8 +1,8 @@
 const bool DebugDisplayUpdate = false;
 
 // Change to your WiFi credentials
-const char* ssid     = "";
-const char* password = "";
+const char* ssid     = "whitefox-weather";
+const char* password = "!OcUrA5u!#";
 
 // Use your own API key by signing up for a free developer account at https://openweathermap.org/
 String apikey       = "";                      // See: https://openweathermap.org/

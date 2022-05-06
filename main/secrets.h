@@ -23,17 +23,6 @@ static char respBuf[4096];
 #define DELAY_ERROR     (20*60*1000)
 #define WEATHER_HOST "api.weather.com"
 
-
-
-//===========================================
-//WiFi connection
-//===========================================
-extern char ssid[] = "whitefox-weather"; // WiFi Router ssid
-extern char pass[] = "!OcUrA5u!#"; // WiFi Router password
-
-// char ssid[] = "whitefox"; // WiFi Router ssid
-// char pass[] = "happilyeverafter"; // WiFi Router password
-
 //===========================================
 //db server connection
 //===========================================

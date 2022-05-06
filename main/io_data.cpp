@@ -7,17 +7,6 @@
 // Debug Level from 0 to 4
 #define _MYSQL_LOGLEVEL_      1
 
-void wifiConnect(void)
-{
-  Serial.println("Connecting to " + String(ssid));
-  WiFi.mode(WIFI_STA);
-  WiFi.begin(ssid, pass);
-  while ( WiFi.status() != WL_CONNECTED) {
-    Serial.print('.');
-    delay(100);
-  } 
-}
-
 void getData(void) {
 //   int hourPtr = timeinfo.tm_hour;
   IPAddress server(192, 168, 50, 105);

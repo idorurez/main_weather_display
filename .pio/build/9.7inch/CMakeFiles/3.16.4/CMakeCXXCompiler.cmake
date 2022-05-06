@@ -83,6 +83,6 @@ endif()
 
 
 set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "C:/Users/neuro/.platformio/packages/toolchain-xtensa32/xtensa-esp32-elf/include/c++/8.4.0;C:/Users/neuro/.platformio/packages/toolchain-xtensa32/xtensa-esp32-elf/include/c++/8.4.0/xtensa-esp32-elf;C:/Users/neuro/.platformio/packages/toolchain-xtensa32/xtensa-esp32-elf/include/c++/8.4.0/backward;C:/Users/neuro/.platformio/packages/toolchain-xtensa32/lib/gcc/xtensa-esp32-elf/8.4.0/include;C:/Users/neuro/.platformio/packages/toolchain-xtensa32/lib/gcc/xtensa-esp32-elf/8.4.0/include-fixed;C:/Users/neuro/.platformio/packages/toolchain-xtensa32/xtensa-esp32-elf/sys-include;C:/Users/neuro/.platformio/packages/toolchain-xtensa32/xtensa-esp32-elf/include")
-set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "")
+set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;m;gcc;c;nosys;c;gcc")
 set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "C:/Users/neuro/.platformio/packages/toolchain-xtensa32/lib/gcc/xtensa-esp32-elf/8.4.0;C:/Users/neuro/.platformio/packages/toolchain-xtensa32/lib/gcc;C:/Users/neuro/.platformio/packages/toolchain-xtensa32/xtensa-esp32-elf/lib")
 set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

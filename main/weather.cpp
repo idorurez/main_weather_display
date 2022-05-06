@@ -210,7 +210,7 @@ uint8_t StartWiFi() {
   WiFi.setAutoReconnect(true);
   WiFi.begin(ssid, password);
   unsigned long start = millis();
-  uint8_t connectionStatus;
+  uint8_t connectionStatus = NULL;
   bool AttemptConnection = true;
   while (AttemptConnection) {
     connectionStatus = WiFi.status();

@@ -71,6 +71,6 @@ endif()
 
 
 set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "C:/Users/neuro/.platformio/packages/toolchain-xtensa32/lib/gcc/xtensa-esp32-elf/8.4.0/include;C:/Users/neuro/.platformio/packages/toolchain-xtensa32/lib/gcc/xtensa-esp32-elf/8.4.0/include-fixed;C:/Users/neuro/.platformio/packages/toolchain-xtensa32/xtensa-esp32-elf/sys-include;C:/Users/neuro/.platformio/packages/toolchain-xtensa32/xtensa-esp32-elf/include")
-set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "")
+set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "gcc;c;nosys;c;gcc")
 set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "C:/Users/neuro/.platformio/packages/toolchain-xtensa32/lib/gcc/xtensa-esp32-elf/8.4.0;C:/Users/neuro/.platformio/packages/toolchain-xtensa32/lib/gcc;C:/Users/neuro/.platformio/packages/toolchain-xtensa32/xtensa-esp32-elf/lib")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")
