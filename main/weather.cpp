@@ -17,6 +17,11 @@
 #include <string.h>
 
 #include "epd_driver.h"
+#include "epd_highlevel.h"
+#include "driver/adc.h"
+#include "esp_adc_cal.h"
+
+#include <NeoPixelBus.h>
 
 #include "Arduino.h"
 #define ARDUINOJSON_ENABLE_ARDUINO_STRING 1
@@ -35,6 +40,71 @@
 
 #define SCREEN_WIDTH   EPD_WIDTH
 #define SCREEN_HEIGHT  EPD_HEIGHT
+
+NeoPixelBus<NeoGrbFeature, NeoEsp32I2s0Ws2812xMethod> strip(1, 3);
+NeoGamma<NeoGammaTableMethod> colorGamma;
+
+EpdiyHighlevelState hl;
+uint8_t *fb; // EPD 2bpp buffer
+
+int deepSleepSeconds = 86400;
+int temperature = 25;
+
+uint8_t led_power_toggle_pin = 14; // This pin is used to toggle power to the WS2812.
+uint8_t button_1_pin = 36;
+uint8_t button_2_pin = 39;
+uint8_t button_3_pin = 13;
+uint64_t wakeUpPins = GPIO_SEL_13 | GPIO_SEL_36 | GPIO_SEL_39; // Wakeup pins, same as button pins
+int bat_pin = 34;                                              // Battery ADC pin
+int therm_pin = 35;                                            // Thermistor ADC pin
+
+// Thermistor settings, change only if you're using different thermistor than specified
+int therm_resistance_nom = 100000; // resistance at 25 degrees C
+int therm_temp_nom = 25;           // temp. for nominal resistance (almost always 25 C)
+int therm_b = 4250;                // The beta coefficient of the thermistor (usually 3000-4000)
+int therm_resistor = 100000;       // the value of the 'other' resistor (measured)
+
+// Use internal ADC calibration to get more reasonable results
+// https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/adc.html
+esp_adc_cal_characteristics_t *adc_chars = (esp_adc_cal_characteristics_t *)calloc(1, sizeof(esp_adc_cal_characteristics_t));
+esp_adc_cal_value_t val_type = esp_adc_cal_characterize(ADC_UNIT_1, ADC_ATTEN_DB_11, ADC_WIDTH_BIT_12, 1100, adc_chars);
+
+uint8_t readButtons()
+{
+    uint8_t result = 0;
+    if (digitalRead(button_1_pin) == HIGH)
+    {
+        result = result * 10 + 1;
+    }
+    if (digitalRead(button_2_pin) == HIGH)
+    {
+        result = result * 10 + 2;
+    }
+    if (digitalRead(button_3_pin) == HIGH)
+    {
+        result = result * 10 + 3;
+    }
+    return result;
+}
+
+void print_uint64_t(uint64_t num)
+{
+
+    char rev[128];
+    char *p = rev + 1;
+
+    while (num > 0)
+    {
+        *p++ = '0' + (num % 10);
+        num /= 10;
+    }
+    p--;
+    /*Print the number which is now in reverse*/
+    while (p > rev)
+    {
+        Serial.print(*p--);
+    }
+}
 
 
 //################  VERSION  ##################################################
@@ -68,6 +138,10 @@ int        wifi_signal, CurrentHour = 0, CurrentMin = 0, CurrentSec = 0, EventCn
 Forecast_record_type  WxConditions[1];
 Forecast_record_type  WxForecast[max_readings];
 
+// Weather_station_data localConditions[1];
+Weather_station_data localConditions[max_readings];
+
+
 float pressure_readings[max_readings]    = {0};
 float temperature_readings[max_readings] = {0};
 float humidity_readings[max_readings]    = {0};
@@ -81,8 +155,6 @@ long StartTime = 0, SleepTimer = 0;
 long Delta         = 12; // correction factor to compensate the ESP32 speed
 // Prevents display at xx:59:yy and then xx:00:yy (one minute later) to save power
 String LocalIP;
-
-uint8_t *fb;
 
 //fonts
 
@@ -220,7 +292,7 @@ uint8_t StartWiFi() {
     if (connectionStatus == WL_CONNECTED || connectionStatus == WL_CONNECT_FAILED) {
       AttemptConnection = false;
     }
-    delay(50);
+    delay(1000);
   }
   if (connectionStatus == WL_CONNECTED) {
     wifi_signal = WiFi.RSSI(); // Get Wifi Signal strength now, because the WiFi will be turned off to save power!
@@ -241,10 +313,14 @@ void loop() {
   printf("current temperature: %f\n", epd_ambient_temperature());
   Delay(300);
 
-  Delay(200000);
+  // Delay(200000);
 }
 
 void setup() {
+  // epd_init(EPD_LUT_64K);
+  hl = epd_hl_init(EPD_BUILTIN_WAVEFORM);
+  fb = epd_hl_get_framebuffer(&hl);
+
   StartTime = millis();
   Serial.begin(115200);
   if (StartWiFi() == WL_CONNECTED && SetupTime() == true) {
@@ -252,9 +328,8 @@ void setup() {
       // byte Attempts = 1;
       // bool RxWeather = false, RxForecast = false;
 
-      getData();
-
-      // WiFiClient client;   // wifi client object
+      WiFiClient client;   // wifi client object
+      get_local_weather_data(localConditions, client);
       // while ((RxWeather == false || RxForecast == false) && Attempts <= 2) { // Try up-to 2 time for Weather and Forecast data
       //   if (RxWeather  == false) RxWeather  = obtainWeatherData(client, "weather");
       //   if (RxForecast == false) RxForecast = obtainWeatherData(client, "forecast");
@@ -270,13 +345,13 @@ void setup() {
       volatile uint32_t t2 = Millis();
       printf("EPD clear took %dms.\n", t2 - t1);
 
-      //epd_poweroff();
-      //epd_poweron();
+      epd_poweroff();
+      epd_poweron();
 
 
-      //drawImage(client);
-      // DisplayWeather();
-      //DisplayTime();
+      // drawImage(client);
+      DisplayWeather();
+      DisplayTime();
 
       t1 = Millis();
       int temperature = epd_ambient_temperature();
@@ -560,8 +635,8 @@ void DisplayWeather() {                          // 9.7" e-paper display is 1200
     DisplayStatusSection(990, 20, wifi_signal); // Wi-Fi signal strength and Battery voltage
     DisplayGeneralInfoSection();                 // Top line of the display
 
-    DisplayDisplayWindSection(1000, 210, WxConditions[0].Winddir, WxConditions[0].Windspeed, 130);
-    DisplayAstronomySection(920, 720);             // Astronomy section Sun rise/set, Moon phase and Moon icon
+    // DisplayDisplayWindSection(1000, 210, WxConditions[0].Winddir, WxConditions[0].Windspeed, 130);
+    // DisplayAstronomySection(920, 720);             // Astronomy section Sun rise/set, Moon phase and Moon icon
     DisplayMainWeatherSection(137, 130);          // Centre section of display for Location, temperature, Weather report, current Wx Symbol and wind direction
     DisplayForecastSection(10, 330);             // 3hr forecast boxes
 }
@@ -571,14 +646,22 @@ void DisplayGeneralInfoSection() {
   setFont(OpenSans8B);
   drawString(4, 2, City, LEFT);
   // Uncomment the next line if the display of IP- and MAC-Adddress is wanted
-  //drawString(SCREEN_WIDTH - 150, 20, "IP=" + LocalIP + ",  MAC=" + WiFi.macAddress() ,RIGHT);
+  drawString(SCREEN_WIDTH - 150, 20, "IP=" + LocalIP + ",  MAC=" + WiFi.macAddress() ,RIGHT);
   drawLine(5, 30, SCREEN_WIDTH - 8, 30, 0xAA);
   drawString(200, 2, Date_str, LEFT);
   drawString(400, 2, TXT_UPDATED + Time_str, LEFT);
 }
 
 void DisplayMainWeatherSection(int x, int y) {  // (x=500, y=190)
-  DisplayConditionsSection(x + 3, y + 50, WxConditions[0].Icon, LargeIcon);
+  // DisplayConditionsSection(x + 3, y + 50, WxConditions[0].Icon, LargeIcon);
+  DisplayTemperatureSection(x + 230, y - 30, 180, 170);
+  DisplayPressureSection(x + 160, y + 70, 180, 170,  WxConditions[0].Pressure, WxConditions[0].Trend);
+  DisplayPrecipitationSection(x + 268, y - 8, 181, 170);
+  //DisplayForecastTextSection(x + 147, y + 22, 548, 90);
+}
+
+void DisplayLocalMainWeatherSection(int x, int y) {  // (x=500, y=190)
+  // DisplayConditionsSection(x + 3, y + 50, WxConditions[0].Icon, LargeIcon);
   DisplayTemperatureSection(x + 230, y - 30, 180, 170);
   DisplayPressureSection(x + 160, y + 70, 180, 170,  WxConditions[0].Pressure, WxConditions[0].Trend);
   DisplayPrecipitationSection(x + 268, y - 8, 181, 170);
@@ -648,6 +731,14 @@ void DisplayTemperatureSection(int x, int y, int twidth, int tdepth) {
   drawString(x, y + 40, String(WxConditions[0].High, 0) + "° | " + String(WxConditions[0].Low, 0) + "°", CENTER); // Show forecast high and Low
 }
 
+void DisplayLocalTemperatureSection(int x, int y, int twidth, int tdepth) {
+  //setFont(OpenSans24/*24b*/);
+  setFont(OpenSans24B);
+  drawString(x, y, String(localConditions[0].bsecTemp, 1) + "°F", CENTER); // Show current Temperature
+  setFont(OpenSans16);
+}
+
+
 void DisplayForecastTextSection(int x, int y , int fwidth, int fdepth) {
   String Wx_Description;
   setFont(OpenSans24/*18*/);
@@ -666,6 +757,12 @@ void DisplayForecastTextSection(int x, int y , int fwidth, int fdepth) {
 }
 
 void DisplayPressureSection(int x, int y, int pwidth, int pdepth, float pressure, String slope) {
+  pressure = pressure * 0.750062; //convert to mmhg
+  setFont(OpenSans12/*24b*/);
+  drawString(x, y, String(pressure, (Units == "M"?0:1)) + (Units == "M" ? "mm" : "in"), LEFT);
+}
+
+void DisplayLocalPressureSection(int x, int y, int pwidth, int pdepth, float pressure, String slope) {
   pressure = pressure * 0.750062; //convert to mmhg
   setFont(OpenSans12/*24b*/);
   drawString(x, y, String(pressure, (Units == "M"?0:1)) + (Units == "M" ? "mm" : "in"), LEFT);
@@ -865,6 +962,7 @@ void DrawRSSI(int x, int y, int rssi) {
 
 boolean UpdateLocalTime() {
   struct tm timeinfo;
+  
   char   time_output[30], day_output[30], update_time[30];
   while (!getLocalTime(&timeinfo, 5000)) { // Wait for 5-sec for time to synchronise
     Serial.println("Failed to obtain time");
@@ -1404,11 +1502,6 @@ void drawPixel(int x, int y, uint8_t color) {
 void setFont(EpdFont const &font) {
   currentFont = font;
 }
-
-
-
-
-
 
 
 
