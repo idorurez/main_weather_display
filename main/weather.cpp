@@ -47,7 +47,7 @@ NeoGamma<NeoGammaTableMethod> colorGamma;
 EpdiyHighlevelState hl;
 uint8_t *fb; // EPD 2bpp buffer
 
-int deepSleepSeconds = 86400;
+int deepSleepSeconds = 5 * 60;
 int temperature = 25;
 
 uint8_t led_power_toggle_pin = 14; // This pin is used to toggle power to the WS2812.
@@ -184,12 +184,15 @@ String ConvertUnixTime(int unix_time);
 void DisplayWeather();
 void DisplayGeneralInfoSection();
 void DisplayMainWeatherSection(int x, int y);
+void DisplayLocalMainWeatherSection(int x, int y);
 void DisplayDisplayWindSection(int x, int y, float angle, float windspeed, int Cradius);
 String WindDegToDirection(float winddirection);
 void DisplayTemperatureSection(int x, int y, int twidth, int tdepth);
+void DisplayLocalTemperatureSection(int x, int y, int twidth, int tdepth);
 void DisplayForecastTextSection(int x, int y , int fwidth, int fdepth);
 void DisplayForecastWeather(int x, int y, int index);
 void DisplayPressureSection(int x, int y, int pwidth, int pdepth, float pressure, String slope);
+void DisplayLocalPressureSection(int x, int y, int pwidth, int pdepth, float pressure);
 void DisplayAstronomySection(int x, int y);
 void DrawMoon(int x, int y, int dd, int mm, int yy, String hemisphere);
 String MoonPhase(int d, int m, int y, String hemisphere);
@@ -313,7 +316,7 @@ void loop() {
   printf("current temperature: %f\n", epd_ambient_temperature());
   Delay(300);
 
-  // Delay(200000);
+  Delay(200000);
 }
 
 void setup() {
@@ -390,6 +393,7 @@ void epd_task(void *pvParameters) {
 
   xTaskCreatePinnedToCore(&epd_task, "epd task", 10000, NULL, 2, NULL, 1);
 
+  disableCore0WDT();
   initArduino();
   setup();
 }
@@ -637,7 +641,8 @@ void DisplayWeather() {                          // 9.7" e-paper display is 1200
 
     // DisplayDisplayWindSection(1000, 210, WxConditions[0].Winddir, WxConditions[0].Windspeed, 130);
     // DisplayAstronomySection(920, 720);             // Astronomy section Sun rise/set, Moon phase and Moon icon
-    DisplayMainWeatherSection(137, 130);          // Centre section of display for Location, temperature, Weather report, current Wx Symbol and wind direction
+    // DisplayMainWeatherSection(137, 130);          // Centre section of display for Location, temperature, Weather report, current Wx Symbol and wind direction
+    DisplayLocalMainWeatherSection(137, 130);          // Centre section of display for Location, temperature, Weather report, current Wx Symbol and wind direction
     DisplayForecastSection(10, 330);             // 3hr forecast boxes
 }
 
@@ -662,8 +667,8 @@ void DisplayMainWeatherSection(int x, int y) {  // (x=500, y=190)
 
 void DisplayLocalMainWeatherSection(int x, int y) {  // (x=500, y=190)
   // DisplayConditionsSection(x + 3, y + 50, WxConditions[0].Icon, LargeIcon);
-  DisplayTemperatureSection(x + 230, y - 30, 180, 170);
-  DisplayPressureSection(x + 160, y + 70, 180, 170,  WxConditions[0].Pressure, WxConditions[0].Trend);
+  DisplayLocalTemperatureSection(x + 230, y - 30, 180, 170);
+  DisplayLocalPressureSection(x + 160, y + 70, 180, 170,  localConditions[0].bsecPressure);
   DisplayPrecipitationSection(x + 268, y - 8, 181, 170);
   //DisplayForecastTextSection(x + 147, y + 22, 548, 90);
 }
@@ -757,13 +762,13 @@ void DisplayForecastTextSection(int x, int y , int fwidth, int fdepth) {
 }
 
 void DisplayPressureSection(int x, int y, int pwidth, int pdepth, float pressure, String slope) {
-  pressure = pressure * 0.750062; //convert to mmhg
+//  pressure = pressure * 0.750062; //convert to mmhg
   setFont(OpenSans12/*24b*/);
   drawString(x, y, String(pressure, (Units == "M"?0:1)) + (Units == "M" ? "mm" : "in"), LEFT);
 }
 
-void DisplayLocalPressureSection(int x, int y, int pwidth, int pdepth, float pressure, String slope) {
-  pressure = pressure * 0.750062; //convert to mmhg
+void DisplayLocalPressureSection(int x, int y, int pwidth, int pdepth, float pressure) {
+//  pressure = pressure * 0.750062; //convert to mmhg
   setFont(OpenSans12/*24b*/);
   drawString(x, y, String(pressure, (Units == "M"?0:1)) + (Units == "M" ? "mm" : "in"), LEFT);
 }

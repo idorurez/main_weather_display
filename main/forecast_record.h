@@ -40,7 +40,7 @@ typedef struct
   float tempF = 0;
   float windSpeed = 0;
   double windDir = 0;
-  char windCardDir[16] = "NULL";
+  char* windCardDir;
   float rain = 0;
 
   float bsecRawTemp = 0;
