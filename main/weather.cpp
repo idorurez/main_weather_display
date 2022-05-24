@@ -148,7 +148,7 @@ float humidity_readings[max_readings]    = {0};
 float rain_readings[max_readings]        = {0};
 float snow_readings[max_readings]        = {0};
 
-long SleepDuration = 60; // Sleep time in minutes, aligned to the nearest minute boundary, so if 30 will always update at 00 or 30 past the hour
+long SleepDuration = 5; // Sleep time in minutes, aligned to the nearest minute boundary, so if 30 will always update at 00 or 30 past the hour
 int  WakeupTime    = 6;  // Don't wakeup until after 07:00 to save battery power
 int  SleepTime     = 23; // Sleep after (23+1) 00:00 to save battery power
 long StartTime = 0, SleepTimer = 0;
@@ -186,10 +186,13 @@ void DisplayGeneralInfoSection();
 void DisplayMainWeatherSection(int x, int y);
 void DisplayLocalMainWeatherSection(int x, int y);
 void DisplayDisplayWindSection(int x, int y, float angle, float windspeed, int Cradius);
+void DisplayLocalWindSection(int x, int y, float angle, float windspeed, int Cradius);
+
 String WindDegToDirection(float winddirection);
 void DisplayTemperatureSection(int x, int y, int twidth, int tdepth);
 void DisplayLocalTemperatureSection(int x, int y, int twidth, int tdepth);
 void DisplayForecastTextSection(int x, int y , int fwidth, int fdepth);
+void DisplayLocalHumiditySection(int x, int y, int twidth, int tdepth);
 void DisplayForecastWeather(int x, int y, int index);
 void DisplayPressureSection(int x, int y, int pwidth, int pdepth, float pressure, String slope);
 void DisplayLocalPressureSection(int x, int y, int pwidth, int pdepth, float pressure);
@@ -230,7 +233,10 @@ void drawString(int x, int y, String text, alignment align);
 void drawStringMaxWidth(int x, int y, unsigned int text_width, String text, alignment align);
 void ReportEvent(String EventMessage[]);
 void DisplayPrecipitationSection(int x, int y, int pwidth, int pdepth);
+void DisplayLocalPrecipitationSection(int x, int y, int pwidth, int pdepth);
 void DisplayTime();
+
+
 //void VerboseRecordOfResetReason(RESET_REASON reason);
 
 void fillCircle(int x, int y, int r, uint8_t color);
@@ -255,6 +261,7 @@ uint32_t Millis() { return esp_timer_get_time() / 1000; }
 void BeginSleep() {
   epd_poweroff();
   long SleepTimer = SleepDuration * 60; //Some ESP32 are too fast to maintain accurate time
+  // long SLeepTimer = 5 * 60;
   esp_sleep_enable_timer_wakeup(SleepTimer * 1000000LL);
 #ifdef BUILTIN_LED
   pinMode(BUILTIN_LED, INPUT); // If it's On, turn it off and some boards use GPIO-5 for SPI-SS, which remains low after screen use
@@ -281,27 +288,35 @@ uint8_t StartWiFi() {
   IPAddress dns(8, 8, 8, 8); // Google DNS
   WiFi.disconnect();
   WiFi.mode(WIFI_STA); // switch off AP
-  WiFi.setAutoConnect(true);
-  WiFi.setAutoReconnect(true);
+  // WiFi.setAutoConnect(true);
+  // WiFi.setAutoReconnect(true);
   WiFi.begin(ssid, password);
   unsigned long start = millis();
-  uint8_t connectionStatus = NULL;
-  bool AttemptConnection = true;
-  while (AttemptConnection) {
-    connectionStatus = WiFi.status();
-    if (millis() > start + 15000) { // Wait 15-secs maximum
-      AttemptConnection = false;
-    }
-    if (connectionStatus == WL_CONNECTED || connectionStatus == WL_CONNECT_FAILED) {
-      AttemptConnection = false;
-    }
+  uint8_t connectionStatus = WiFi.status();
+  // bool AttemptConnection = true;
+  while (WiFi.status() != WL_CONNECTED) {
+    if (millis() > start + 15000) { 
+      break;
+    }// Wait 15-secs maximum
+    Serial.print('.');
     delay(1000);
+    // connectionStatus = WiFi.status();
+    // if (millis() > start + 15000) { // Wait 15-secs maximum
+    //   AttemptConnection = false;
+    // }
+    // if (connectionStatus == WL_CONNECTED || connectionStatus == WL_CONNECT_FAILED) {
+    //   AttemptConnection = false;
+    // }
   }
-  if (connectionStatus == WL_CONNECTED) {
-    wifi_signal = WiFi.RSSI(); // Get Wifi Signal strength now, because the WiFi will be turned off to save power!
-    Serial.println("WiFi connected at: " + WiFi.localIP().toString());
-  }
-  else Serial.println("WiFi connection *** FAILED ***");
+  connectionStatus = WiFi.status();
+  wifi_signal = WiFi.RSSI(); // Get Wifi Signal strength now, because the WiFi will be turned off to save power!
+  Serial.println("WiFi connected at: " + WiFi.localIP().toString());
+  // if (WiFi.status() == WL_CONNECTED) {
+  //   wifi_signal = WiFi.RSSI(); // Get Wifi Signal strength now, because the WiFi will be turned off to save power!
+  //   Serial.println("WiFi connected at: " + WiFi.localIP().toString());
+  // }  else {
+  //   Serial.printf("WiFi connection *** FAILED ***:: %d\n", connectionStatus);
+  // }
   return connectionStatus;
 }
 
@@ -326,11 +341,13 @@ void setup() {
 
   StartTime = millis();
   Serial.begin(115200);
-  if (StartWiFi() == WL_CONNECTED && SetupTime() == true) {
-    if ((CurrentHour >= WakeupTime && CurrentHour <= SleepTime)) {
+  if (StartWiFi() == WL_CONNECTED) {
+  // if (StartWiFi() == WL_CONNECTED && SetupTime() == true) {
+    // if ((CurrentHour >= WakeupTime && CurrentHour <= SleepTime)) {
       // byte Attempts = 1;
       // bool RxWeather = false, RxForecast = false;
 
+      SetupTime();
       WiFiClient client;   // wifi client object
       get_local_weather_data(localConditions, client);
       // while ((RxWeather == false || RxForecast == false) && Attempts <= 2) { // Try up-to 2 time for Weather and Forecast data
@@ -366,7 +383,7 @@ void setup() {
 
         //display.display(false); // Full screen update mode
       // }
-    }
+    // }
   }
   BeginSleep();
 }
@@ -638,12 +655,11 @@ double NormalizedMoonPhase(int d, int m, int y) {
 void DisplayWeather() {                          // 9.7" e-paper display is 1200x825 resolution
     DisplayStatusSection(990, 20, wifi_signal); // Wi-Fi signal strength and Battery voltage
     DisplayGeneralInfoSection();                 // Top line of the display
-
-    // DisplayDisplayWindSection(1000, 210, WxConditions[0].Winddir, WxConditions[0].Windspeed, 130);
+    DisplayLocalWindSection(1000, 210, localConditions[0].windDir, localConditions[0].windSpeed, 130);
     // DisplayAstronomySection(920, 720);             // Astronomy section Sun rise/set, Moon phase and Moon icon
     // DisplayMainWeatherSection(137, 130);          // Centre section of display for Location, temperature, Weather report, current Wx Symbol and wind direction
     DisplayLocalMainWeatherSection(137, 130);          // Centre section of display for Location, temperature, Weather report, current Wx Symbol and wind direction
-    DisplayForecastSection(10, 330);             // 3hr forecast boxes
+    // DisplayForecastSection(10, 330);             // 3hr forecast boxes
 }
 
 
@@ -651,7 +667,7 @@ void DisplayGeneralInfoSection() {
   setFont(OpenSans8B);
   drawString(4, 2, City, LEFT);
   // Uncomment the next line if the display of IP- and MAC-Adddress is wanted
-  drawString(SCREEN_WIDTH - 150, 20, "IP=" + LocalIP + ",  MAC=" + WiFi.macAddress() ,RIGHT);
+  // drawString(SCREEN_WIDTH - 150, 20, "IP=" + LocalIP + ",  MAC=" + WiFi.macAddress() ,RIGHT);
   drawLine(5, 30, SCREEN_WIDTH - 8, 30, 0xAA);
   drawString(200, 2, Date_str, LEFT);
   drawString(400, 2, TXT_UPDATED + Time_str, LEFT);
@@ -668,8 +684,10 @@ void DisplayMainWeatherSection(int x, int y) {  // (x=500, y=190)
 void DisplayLocalMainWeatherSection(int x, int y) {  // (x=500, y=190)
   // DisplayConditionsSection(x + 3, y + 50, WxConditions[0].Icon, LargeIcon);
   DisplayLocalTemperatureSection(x + 230, y - 30, 180, 170);
+  DisplayLocalHumiditySection(x + 420, y - 30, 180, 170);
   DisplayLocalPressureSection(x + 160, y + 70, 180, 170,  localConditions[0].bsecPressure);
-  DisplayPrecipitationSection(x + 268, y - 8, 181, 170);
+  DisplayLocalPrecipitationSection(x + 268, y - 8, 181, 170);
+
   //DisplayForecastTextSection(x + 147, y + 22, 548, 90);
 }
 
@@ -708,6 +726,42 @@ void DisplayDisplayWindSection(int x, int y, float angle, float windspeed, int C
   //drawString(x + 16, y -12, (Units == "M" ? "m/s" : "mph"), LEFT);
 }
 
+void DisplayLocalWindSection(int x, int y, float angle, float windspeed, int Cradius) {
+  arrow(x, y, Cradius - 22, angle, 18, 33); // Show wind direction on outer circle of width and length
+  setFont(OpenSans12);
+  int dxo, dyo, dxi, dyi;
+  drawCircle(x, y, Cradius, GxEPD_BLACK);     // Draw compass circle
+  drawCircle(x, y, Cradius + 1, GxEPD_BLACK); // Draw compass circle
+  drawCircle(x, y, Cradius * 0.7, GxEPD_BLACK); // Draw compass inner circle
+  for (float a = 0; a < 360; a = a + 22.5) {
+    dxo = Cradius * cos((a - 90) * PI / 180);
+    dyo = Cradius * sin((a - 90) * PI / 180);
+    if (a == 45)  drawString(dxo + x + 27, dyo + y - 20, TXT_NE, CENTER);
+    if (a == 135) drawString(dxo + x + 27, dyo + y - 2,  TXT_SE, CENTER);
+    if (a == 225) drawString(dxo + x - 43, dyo + y - 2,  TXT_SW, CENTER);
+    if (a == 315) drawString(dxo + x - 43, dyo + y - 20, TXT_NW, CENTER);
+    dxi = dxo * 0.9;
+    dyi = dyo * 0.9;
+    drawLine(dxo + x, dyo + y, dxi + x, dyi + y, GxEPD_BLACK);
+    dxo = dxo * 0.7;
+    dyo = dyo * 0.7;
+    dxi = dxo * 0.9;
+    dyi = dyo * 0.9;
+    drawLine(dxo + x, dyo + y, dxi + x, dyi + y, GxEPD_BLACK);
+  }
+  drawString(x - 3, y - Cradius - 30, TXT_N, CENTER);
+  drawString(x - 5, y + Cradius + 18, TXT_S, CENTER);
+  drawString(x - Cradius - 27, y - 11, TXT_W, CENTER);
+  drawString(x + Cradius + 15, y - 11, TXT_E, CENTER);
+  drawString(x - 12, y - 57, WindDegToDirection(angle), CENTER);
+  drawString(x + 3, y + 50, String(angle, 0) + "°", CENTER);
+  setFont(OpenSans24B);
+  drawString(x + 3, y - 16, String(windspeed, 1), CENTER);
+  //setFont(OpenSans12);
+  //drawString(x + 16, y -12, (Units == "M" ? "m/s" : "mph"), LEFT);
+}
+
+
 String WindDegToDirection(float winddirection) {
   if (winddirection >= 348.75 || winddirection < 11.25)  return TXT_N;
   if (winddirection >=  11.25 && winddirection < 33.75)  return TXT_NNE;
@@ -739,7 +793,14 @@ void DisplayTemperatureSection(int x, int y, int twidth, int tdepth) {
 void DisplayLocalTemperatureSection(int x, int y, int twidth, int tdepth) {
   //setFont(OpenSans24/*24b*/);
   setFont(OpenSans24B);
-  drawString(x, y, String(localConditions[0].bsecTemp, 1) + "°F", CENTER); // Show current Temperature
+  drawString(x, y, String(localConditions[0].bsecTemp, 1) + "°C", CENTER); // Show current Temperature
+  setFont(OpenSans16);
+}
+
+void DisplayLocalHumiditySection(int x, int y, int twidth, int tdepth) {
+  //setFont(OpenSans24/*24b*/);
+  setFont(OpenSans24B);
+  drawString(x, y, String(localConditions[0].bsecHumidity, 1) + "%", CENTER); // Show current Temperature
   setFont(OpenSans16);
 }
 
@@ -770,7 +831,8 @@ void DisplayPressureSection(int x, int y, int pwidth, int pdepth, float pressure
 void DisplayLocalPressureSection(int x, int y, int pwidth, int pdepth, float pressure) {
 //  pressure = pressure * 0.750062; //convert to mmhg
   setFont(OpenSans12/*24b*/);
-  drawString(x, y, String(pressure, (Units == "M"?0:1)) + (Units == "M" ? "mm" : "in"), LEFT);
+  // drawString(x, y, String(pressure, (Units == "M"?0:1)) + (Units == "M" ? "mm" : "in"), LEFT);
+  drawString(x, y, String(pressure) + " hPA", LEFT);
 }
 
 void DisplayForecastWeather(int x, int y, int index) {
@@ -786,6 +848,17 @@ void DisplayPrecipitationSection(int x, int y, int pwidth, int pdepth) {
   setFont(OpenSans12);
   if (WxForecast[1].Rainfall >= 0.005) { // Ignore small amounts
     drawString(x, y + 80, String(WxForecast[1].Rainfall, 2) + (Units == "M" ? "mm" : "in"), LEFT); // Only display rainfall total today if > 0
+    addraindrop(x + 102, y + 84, 7);
+  }
+  if (WxForecast[1].Snowfall >= 0.005)  {// Ignore small amounts
+    drawString(x, y + 110, String(WxForecast[1].Snowfall, 2) + (Units == "M" ? "mm" : "in") + " **", LEFT); // Only display snowfall total today if > 0
+  }
+}
+
+void DisplayLocalPrecipitationSection(int x, int y, int pwidth, int pdepth) {
+  setFont(OpenSans12);
+  if (localConditions[0].rain >= 0.005) { // Ignore small amounts
+    drawString(x, y + 80, String(localConditions[0].rain, 2) + " in", LEFT); // Only display rainfall total today if > 0
     addraindrop(x + 102, y + 84, 7);
   }
   if (WxForecast[1].Snowfall >= 0.005)  {// Ignore small amounts

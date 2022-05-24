@@ -26,7 +26,7 @@ set(CMAKE_MT "")
 set(CMAKE_COMPILER_IS_GNUCC 1)
 set(CMAKE_C_COMPILER_LOADED 1)
 set(CMAKE_C_COMPILER_WORKS TRUE)
-set(CMAKE_C_ABI_COMPILED TRUE)
+set(CMAKE_C_ABI_COMPILED FALSE)
 set(CMAKE_COMPILER_IS_MINGW )
 set(CMAKE_COMPILER_IS_CYGWIN )
 if(CMAKE_COMPILER_IS_CYGWIN)
@@ -45,8 +45,8 @@ set(CMAKE_C_IGNORE_EXTENSIONS h;H;o;O;obj;OBJ;def;DEF;rc;RC)
 set(CMAKE_C_LINKER_PREFERENCE 10)
 
 # Save compiler ABI information.
-set(CMAKE_C_SIZEOF_DATA_PTR "4")
-set(CMAKE_C_COMPILER_ABI "ELF")
+set(CMAKE_C_SIZEOF_DATA_PTR "")
+set(CMAKE_C_COMPILER_ABI "")
 set(CMAKE_C_LIBRARY_ARCHITECTURE "")
 
 if(CMAKE_C_SIZEOF_DATA_PTR)
@@ -70,7 +70,7 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "C:/Users/neuro/.platformio/packages/toolchain-xtensa32/lib/gcc/xtensa-esp32-elf/8.4.0/include;C:/Users/neuro/.platformio/packages/toolchain-xtensa32/lib/gcc/xtensa-esp32-elf/8.4.0/include-fixed;C:/Users/neuro/.platformio/packages/toolchain-xtensa32/xtensa-esp32-elf/sys-include;C:/Users/neuro/.platformio/packages/toolchain-xtensa32/xtensa-esp32-elf/include")
-set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "gcc;c;nosys;c;gcc")
-set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "C:/Users/neuro/.platformio/packages/toolchain-xtensa32/lib/gcc/xtensa-esp32-elf/8.4.0;C:/Users/neuro/.platformio/packages/toolchain-xtensa32/lib/gcc;C:/Users/neuro/.platformio/packages/toolchain-xtensa32/xtensa-esp32-elf/lib")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "")
+set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "")
+set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

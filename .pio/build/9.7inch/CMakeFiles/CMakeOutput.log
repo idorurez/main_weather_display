@@ -1,5 +1,20 @@
 The target system is: Generic -  - 
 The host system is: Windows - 10.0.19044 - AMD64
+The target system is: Generic -  - 
+The host system is: Windows - 10.0.19044 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: C:/Users/neuro/.platformio/packages/toolchain-xtensa32/bin/xtensa-esp32-elf-gcc.exe 
+Build flags: -mlongcalls;-Wno-frame-address
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "C:/Users/neuro/dev/main_weather_display/.pio/build/9.7inch/CMakeFiles/3.16.4/CompilerIdC/a.out"
+
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
 Compiler: C:/Users/neuro/.platformio/packages/toolchain-xtensa32/bin/xtensa-esp32-elf-gcc.exe 
 Build flags: -mlongcalls;-Wno-frame-address
@@ -32,26 +47,39 @@ Copyright (C) 2018 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: C:/Users/neuro/.platformio/packages/toolchain-xtensa32/bin/xtensa-esp32-elf-g++.exe 
+Build flags: -mlongcalls;-Wno-frame-address
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "C:/Users/neuro/dev/main_weather_display/.pio/build/9.7inch/CMakeFiles/3.16.4/CompilerIdCXX/a.out"
+
 Determining if the C compiler works passed with the following output:
 Change Dir: C:/Users/neuro/dev/main_weather_display/.pio/build/9.7inch/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Users/neuro/.platformio/packages/tool-ninja/ninja.exe cmTC_c1425 && [1/2] Building C object CMakeFiles/cmTC_c1425.dir/testCCompiler.c.obj
-[2/2] Linking C executable cmTC_c1425
+Run Build Command(s):C:/Users/neuro/.platformio/packages/tool-ninja/ninja.exe cmTC_2ca76 && [1/2] Building C object CMakeFiles/cmTC_2ca76.dir/testCCompiler.c.obj
+[2/2] Linking C executable cmTC_2ca76
 
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: C:/Users/neuro/dev/main_weather_display/.pio/build/9.7inch/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Users/neuro/.platformio/packages/tool-ninja/ninja.exe cmTC_bdd9f && [1/2] Building C object CMakeFiles/cmTC_bdd9f.dir/CMakeCCompilerABI.c.obj
+Run Build Command(s):C:/Users/neuro/.platformio/packages/tool-ninja/ninja.exe cmTC_2ea75 && [1/2] Building C object CMakeFiles/cmTC_2ea75.dir/CMakeCCompilerABI.c.obj
 Using built-in specs.
 COLLECT_GCC=C:\Users\neuro\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-gcc.exe
 Target: xtensa-esp32-elf
 Configured with: /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-host_w64-mingw32 --target=xtensa-esp32-elf --prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf --with-local-prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf --with-headers=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/include --with-newlib --enable-threads=no --disable-shared --with-pkgversion='crosstool-NG esp-2020r3' --disable-__cxa_atexit --enable-cxx-flags=-ffunction-sections --disable-libgomp --disable-libmudflap --disable-libmpx --disable-libssp --disable-libquadmath --disable-libquadmath-support --with-gmp=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --with-mpfr=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --with-mpc=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --with-isl=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --enable-lto --enable-target-optspace --without-long-double-128 --disable-nls --enable-multiarch --enable-languages=c,c++ --disable-libstdcxx-verbose --enable-threads=posix --enable-gcov-custom-rtio --enable-libstdcxx-time=yes
 Thread model: posix
 gcc version 8.4.0 (crosstool-NG esp-2020r3) 
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_bdd9f.dir/CMakeCCompilerABI.c.obj' '-c'
- c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/cc1.exe -quiet -v -iprefix c:\users\neuro\.platformio\packages\toolchain-xtensa32\bin\../lib/gcc/xtensa-esp32-elf/8.4.0/ C:/Users/neuro/.platformio/packages/tool-cmake/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mlongcalls -auxbase-strip CMakeFiles/cmTC_bdd9f.dir/CMakeCCompilerABI.c.obj -Wno-frame-address -version -o C:\Users\neuro\AppData\Local\Temp\cc5hMU0b.s
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_2ea75.dir/CMakeCCompilerABI.c.obj' '-c'
+ c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/cc1.exe -quiet -v -iprefix c:\users\neuro\.platformio\packages\toolchain-xtensa32\bin\../lib/gcc/xtensa-esp32-elf/8.4.0/ C:/Users/neuro/.platformio/packages/tool-cmake/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mlongcalls -auxbase-strip CMakeFiles/cmTC_2ea75.dir/CMakeCCompilerABI.c.obj -Wno-frame-address -version -o C:\Users\neuro\AppData\Local\Temp\cceFOGCT.s
 GNU C17 (crosstool-NG esp-2020r3) version 8.4.0 (xtensa-esp32-elf)
 	compiled by GNU C version 6.3.0 20170516, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
 
@@ -72,12 +100,12 @@ GNU C17 (crosstool-NG esp-2020r3) version 8.4.0 (xtensa-esp32-elf)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 6b556e120a59dff85c3d1250f3b88417
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_bdd9f.dir/CMakeCCompilerABI.c.obj' '-c'
- c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/bin/as.exe --traditional-format --longcalls -o CMakeFiles/cmTC_bdd9f.dir/CMakeCCompilerABI.c.obj C:\Users\neuro\AppData\Local\Temp\cc5hMU0b.s
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_2ea75.dir/CMakeCCompilerABI.c.obj' '-c'
+ c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/bin/as.exe --traditional-format --longcalls -o CMakeFiles/cmTC_2ea75.dir/CMakeCCompilerABI.c.obj C:\Users\neuro\AppData\Local\Temp\cceFOGCT.s
 COMPILER_PATH=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/;c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/;c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/bin/
 LIBRARY_PATH=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/;c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/;c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib/
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_bdd9f.dir/CMakeCCompilerABI.c.obj' '-c'
-[2/2] Linking C executable cmTC_bdd9f
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_2ea75.dir/CMakeCCompilerABI.c.obj' '-c'
+[2/2] Linking C executable cmTC_2ea75
 Using built-in specs.
 COLLECT_GCC=C:\Users\neuro\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-gcc.exe
 COLLECT_LTO_WRAPPER=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/lto-wrapper.exe
@@ -87,9 +115,9 @@ Thread model: posix
 gcc version 8.4.0 (crosstool-NG esp-2020r3) 
 COMPILER_PATH=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/;c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/;c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/bin/
 LIBRARY_PATH=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/;c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/;c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib/
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_bdd9f'
- c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/collect2.exe -plugin c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/liblto_plugin-0.dll -plugin-opt=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\neuro\AppData\Local\Temp\ccU3lxTb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -o cmTC_bdd9f c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib/crt0.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crti.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtbegin.o -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0 -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_bdd9f.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lnosys -lc -lgcc c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtend.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtn.o
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_bdd9f'
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_2ea75'
+ c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/collect2.exe -plugin c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/liblto_plugin-0.dll -plugin-opt=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\neuro\AppData\Local\Temp\ccCXkPg5.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -o cmTC_2ea75 c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib/crt0.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crti.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtbegin.o -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0 -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_2ea75.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lnosys -lc -lgcc c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtend.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtn.o
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_2ea75'
 
 
 
@@ -112,15 +140,15 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(xtensa-esp32-elf-ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: C:/Users/neuro/dev/main_weather_display/.pio/build/9.7inch/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):C:/Users/neuro/.platformio/packages/tool-ninja/ninja.exe cmTC_bdd9f && [1/2] Building C object CMakeFiles/cmTC_bdd9f.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [Run Build Command(s):C:/Users/neuro/.platformio/packages/tool-ninja/ninja.exe cmTC_2ea75 && [1/2] Building C object CMakeFiles/cmTC_2ea75.dir/CMakeCCompilerABI.c.obj]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=C:\Users\neuro\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-gcc.exe]
   ignore line: [Target: xtensa-esp32-elf]
   ignore line: [Configured with: /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-host_w64-mingw32 --target=xtensa-esp32-elf --prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf --with-local-prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf --with-headers=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/include --with-newlib --enable-threads=no --disable-shared --with-pkgversion='crosstool-NG esp-2020r3' --disable-__cxa_atexit --enable-cxx-flags=-ffunction-sections --disable-libgomp --disable-libmudflap --disable-libmpx --disable-libssp --disable-libquadmath --disable-libquadmath-support --with-gmp=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --with-mpfr=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --with-mpc=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --with-isl=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --enable-lto --enable-target-optspace --without-long-double-128 --disable-nls --enable-multiarch --enable-languages=c c++ --disable-libstdcxx-verbose --enable-threads=posix --enable-gcov-custom-rtio --enable-libstdcxx-time=yes]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 8.4.0 (crosstool-NG esp-2020r3) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_bdd9f.dir/CMakeCCompilerABI.c.obj' '-c']
-  ignore line: [ c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/cc1.exe -quiet -v -iprefix c:\users\neuro\.platformio\packages\toolchain-xtensa32\bin\../lib/gcc/xtensa-esp32-elf/8.4.0/ C:/Users/neuro/.platformio/packages/tool-cmake/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mlongcalls -auxbase-strip CMakeFiles/cmTC_bdd9f.dir/CMakeCCompilerABI.c.obj -Wno-frame-address -version -o C:\Users\neuro\AppData\Local\Temp\cc5hMU0b.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_2ea75.dir/CMakeCCompilerABI.c.obj' '-c']
+  ignore line: [ c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/cc1.exe -quiet -v -iprefix c:\users\neuro\.platformio\packages\toolchain-xtensa32\bin\../lib/gcc/xtensa-esp32-elf/8.4.0/ C:/Users/neuro/.platformio/packages/tool-cmake/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mlongcalls -auxbase-strip CMakeFiles/cmTC_2ea75.dir/CMakeCCompilerABI.c.obj -Wno-frame-address -version -o C:\Users\neuro\AppData\Local\Temp\cceFOGCT.s]
   ignore line: [GNU C17 (crosstool-NG esp-2020r3) version 8.4.0 (xtensa-esp32-elf)]
   ignore line: [	compiled by GNU C version 6.3.0 20170516  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version isl-0.19-GMP]
   ignore line: []
@@ -141,16 +169,16 @@ Parsed C implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 6b556e120a59dff85c3d1250f3b88417]
-  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_bdd9f.dir/CMakeCCompilerABI.c.obj' '-c']
-  ignore line: [ c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/bin/as.exe --traditional-format --longcalls -o CMakeFiles/cmTC_bdd9f.dir/CMakeCCompilerABI.c.obj C:\Users\neuro\AppData\Local\Temp\cc5hMU0b.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_2ea75.dir/CMakeCCompilerABI.c.obj' '-c']
+  ignore line: [ c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/bin/as.exe --traditional-format --longcalls -o CMakeFiles/cmTC_2ea75.dir/CMakeCCompilerABI.c.obj C:\Users\neuro\AppData\Local\Temp\cceFOGCT.s]
   ignore line: [COMPILER_PATH=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/]
   ignore line: [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/]
   ignore line: [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/bin/]
   ignore line: [LIBRARY_PATH=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/]
   ignore line: [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/]
   ignore line: [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_bdd9f.dir/CMakeCCompilerABI.c.obj' '-c']
-  ignore line: [[2/2] Linking C executable cmTC_bdd9f]
+  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_2ea75.dir/CMakeCCompilerABI.c.obj' '-c']
+  ignore line: [[2/2] Linking C executable cmTC_2ea75]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=C:\Users\neuro\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-gcc.exe]
   ignore line: [COLLECT_LTO_WRAPPER=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/lto-wrapper.exe]
@@ -164,27 +192,27 @@ Parsed C implicit link information from above output:
   ignore line: [LIBRARY_PATH=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/]
   ignore line: [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/]
   ignore line: [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_bdd9f']
-  link line: [ c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/collect2.exe -plugin c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/liblto_plugin-0.dll -plugin-opt=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\neuro\AppData\Local\Temp\ccU3lxTb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -o cmTC_bdd9f c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib/crt0.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crti.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtbegin.o -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0 -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_bdd9f.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lnosys -lc -lgcc c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtend.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_2ea75']
+  link line: [ c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/collect2.exe -plugin c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/liblto_plugin-0.dll -plugin-opt=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\neuro\AppData\Local\Temp\ccCXkPg5.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -o cmTC_2ea75 c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib/crt0.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crti.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtbegin.o -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0 -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_2ea75.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lnosys -lc -lgcc c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtend.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtn.o]
     arg [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/collect2.exe] ==> ignore
     arg [-plugin] ==> ignore
     arg [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/liblto_plugin-0.dll] ==> ignore
     arg [-plugin-opt=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/lto-wrapper.exe] ==> ignore
-    arg [-plugin-opt=-fresolution=C:\Users\neuro\AppData\Local\Temp\ccU3lxTb.res] ==> ignore
+    arg [-plugin-opt=-fresolution=C:\Users\neuro\AppData\Local\Temp\ccCXkPg5.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
     arg [-plugin-opt=-pass-through=-lnosys] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_bdd9f] ==> ignore
+    arg [cmTC_2ea75] ==> ignore
     arg [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib/crt0.o] ==> ignore
     arg [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crti.o] ==> ignore
     arg [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtbegin.o] ==> ignore
     arg [-Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0] ==> dir [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0]
     arg [-Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc] ==> dir [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc]
     arg [-Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib] ==> dir [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib]
-    arg [CMakeFiles/cmTC_bdd9f.dir/CMakeCCompilerABI.c.obj] ==> ignore
+    arg [CMakeFiles/cmTC_2ea75.dir/CMakeCCompilerABI.c.obj] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [-lc] ==> lib [c]
     arg [-lnosys] ==> lib [nosys]
@@ -200,26 +228,34 @@ Parsed C implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the C compiler works passed with the following output:
+Change Dir: C:/Users/neuro/dev/main_weather_display/.pio/build/9.7inch/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/neuro/.platformio/packages/tool-ninja/ninja.exe cmTC_a0bc3 && [1/2] Building C object CMakeFiles/cmTC_a0bc3.dir/testCCompiler.c.obj
+[2/2] Linking C executable cmTC_a0bc3
+
+
+
 Determining if the CXX compiler works passed with the following output:
 Change Dir: C:/Users/neuro/dev/main_weather_display/.pio/build/9.7inch/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Users/neuro/.platformio/packages/tool-ninja/ninja.exe cmTC_dfca0 && [1/2] Building CXX object CMakeFiles/cmTC_dfca0.dir/testCXXCompiler.cxx.obj
-[2/2] Linking CXX executable cmTC_dfca0
+Run Build Command(s):C:/Users/neuro/.platformio/packages/tool-ninja/ninja.exe cmTC_36236 && [1/2] Building CXX object CMakeFiles\cmTC_36236.dir\testCXXCompiler.cxx.obj
+[2/2] Linking CXX executable cmTC_36236
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: C:/Users/neuro/dev/main_weather_display/.pio/build/9.7inch/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Users/neuro/.platformio/packages/tool-ninja/ninja.exe cmTC_d74ad && [1/2] Building CXX object CMakeFiles/cmTC_d74ad.dir/CMakeCXXCompilerABI.cpp.obj
+Run Build Command(s):C:/Users/neuro/.platformio/packages/tool-ninja/ninja.exe cmTC_d3836 && [1/2] Building CXX object CMakeFiles\cmTC_d3836.dir\CMakeCXXCompilerABI.cpp.obj
 Using built-in specs.
-COLLECT_GCC=C:\Users\neuro\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-g++.exe
+COLLECT_GCC=xtensa-esp32-elf-g++
 Target: xtensa-esp32-elf
 Configured with: /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-host_w64-mingw32 --target=xtensa-esp32-elf --prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf --with-local-prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf --with-headers=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/include --with-newlib --enable-threads=no --disable-shared --with-pkgversion='crosstool-NG esp-2020r3' --disable-__cxa_atexit --enable-cxx-flags=-ffunction-sections --disable-libgomp --disable-libmudflap --disable-libmpx --disable-libssp --disable-libquadmath --disable-libquadmath-support --with-gmp=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --with-mpfr=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --with-mpc=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --with-isl=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --enable-lto --enable-target-optspace --without-long-double-128 --disable-nls --enable-multiarch --enable-languages=c,c++ --disable-libstdcxx-verbose --enable-threads=posix --enable-gcov-custom-rtio --enable-libstdcxx-time=yes
 Thread model: posix
 gcc version 8.4.0 (crosstool-NG esp-2020r3) 
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_d74ad.dir/CMakeCXXCompilerABI.cpp.obj' '-c'
- c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/cc1plus.exe -quiet -v -iprefix c:\users\neuro\.platformio\packages\toolchain-xtensa32\bin\../lib/gcc/xtensa-esp32-elf/8.4.0/ C:/Users/neuro/.platformio/packages/tool-cmake/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mlongcalls -auxbase-strip CMakeFiles/cmTC_d74ad.dir/CMakeCXXCompilerABI.cpp.obj -Wno-frame-address -version -o C:\Users\neuro\AppData\Local\Temp\cccNjTsR.s
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles\cmTC_d3836.dir\CMakeCXXCompilerABI.cpp.obj' '-c'
+ c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/cc1plus.exe -quiet -v -iprefix c:\users\neuro\.platformio\packages\toolchain-xtensa32\bin\../lib/gcc/xtensa-esp32-elf/8.4.0/ C:\Users\neuro\.platformio\packages\tool-cmake\share\cmake-3.16\Modules\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mlongcalls -auxbase-strip CMakeFiles\cmTC_d3836.dir\CMakeCXXCompilerABI.cpp.obj -Wno-frame-address -version -o C:\Users\neuro\AppData\Local\Temp\ccchsHrO.s
 GNU C++14 (crosstool-NG esp-2020r3) version 8.4.0 (xtensa-esp32-elf)
 	compiled by GNU C version 6.3.0 20170516, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
 
@@ -246,14 +282,14 @@ GNU C++14 (crosstool-NG esp-2020r3) version 8.4.0 (xtensa-esp32-elf)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 309c4ac8ccececaa8ae2cac93e8d6204
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_d74ad.dir/CMakeCXXCompilerABI.cpp.obj' '-c'
- c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/bin/as.exe --traditional-format --longcalls -o CMakeFiles/cmTC_d74ad.dir/CMakeCXXCompilerABI.cpp.obj C:\Users\neuro\AppData\Local\Temp\cccNjTsR.s
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles\cmTC_d3836.dir\CMakeCXXCompilerABI.cpp.obj' '-c'
+ c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/bin/as.exe --traditional-format --longcalls -o CMakeFiles\cmTC_d3836.dir\CMakeCXXCompilerABI.cpp.obj C:\Users\neuro\AppData\Local\Temp\ccchsHrO.s
 COMPILER_PATH=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/;c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/;c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/bin/
 LIBRARY_PATH=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/;c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/;c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib/
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_d74ad.dir/CMakeCXXCompilerABI.cpp.obj' '-c'
-[2/2] Linking CXX executable cmTC_d74ad
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles\cmTC_d3836.dir\CMakeCXXCompilerABI.cpp.obj' '-c'
+[2/2] Linking CXX executable cmTC_d3836
 Using built-in specs.
-COLLECT_GCC=C:\Users\neuro\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-g++.exe
+COLLECT_GCC=xtensa-esp32-elf-g++
 COLLECT_LTO_WRAPPER=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/lto-wrapper.exe
 Target: xtensa-esp32-elf
 Configured with: /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-host_w64-mingw32 --target=xtensa-esp32-elf --prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf --with-local-prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf --with-headers=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/include --with-newlib --enable-threads=no --disable-shared --with-pkgversion='crosstool-NG esp-2020r3' --disable-__cxa_atexit --enable-cxx-flags=-ffunction-sections --disable-libgomp --disable-libmudflap --disable-libmpx --disable-libssp --disable-libquadmath --disable-libquadmath-support --with-gmp=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --with-mpfr=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --with-mpc=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --with-isl=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --enable-lto --enable-target-optspace --without-long-double-128 --disable-nls --enable-multiarch --enable-languages=c,c++ --disable-libstdcxx-verbose --enable-threads=posix --enable-gcov-custom-rtio --enable-libstdcxx-time=yes
@@ -261,9 +297,9 @@ Thread model: posix
 gcc version 8.4.0 (crosstool-NG esp-2020r3) 
 COMPILER_PATH=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/;c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/;c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/bin/
 LIBRARY_PATH=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/;c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/;c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib/
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_d74ad'
- c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/collect2.exe -plugin c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/liblto_plugin-0.dll -plugin-opt=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\neuro\AppData\Local\Temp\ccAB0ESX.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -o cmTC_d74ad c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib/crt0.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crti.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtbegin.o -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0 -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_d74ad.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lc -lnosys -lc -lgcc c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtend.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtn.o
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_d74ad'
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_d3836'
+ c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/collect2.exe -plugin c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/liblto_plugin-0.dll -plugin-opt=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\neuro\AppData\Local\Temp\ccIHWji8.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -o cmTC_d3836 c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib/crt0.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crti.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtbegin.o -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0 -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib CMakeFiles\cmTC_d3836.dir\CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lc -lnosys -lc -lgcc c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtend.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtn.o
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_d3836'
 
 
 
@@ -292,15 +328,15 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(xtensa-esp32-elf-ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: C:/Users/neuro/dev/main_weather_display/.pio/build/9.7inch/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):C:/Users/neuro/.platformio/packages/tool-ninja/ninja.exe cmTC_d74ad && [1/2] Building CXX object CMakeFiles/cmTC_d74ad.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [Run Build Command(s):C:/Users/neuro/.platformio/packages/tool-ninja/ninja.exe cmTC_d3836 && [1/2] Building CXX object CMakeFiles\cmTC_d3836.dir\CMakeCXXCompilerABI.cpp.obj]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=C:\Users\neuro\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-g++.exe]
+  ignore line: [COLLECT_GCC=xtensa-esp32-elf-g++]
   ignore line: [Target: xtensa-esp32-elf]
   ignore line: [Configured with: /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-host_w64-mingw32 --target=xtensa-esp32-elf --prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf --with-local-prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf --with-headers=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/include --with-newlib --enable-threads=no --disable-shared --with-pkgversion='crosstool-NG esp-2020r3' --disable-__cxa_atexit --enable-cxx-flags=-ffunction-sections --disable-libgomp --disable-libmudflap --disable-libmpx --disable-libssp --disable-libquadmath --disable-libquadmath-support --with-gmp=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --with-mpfr=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --with-mpc=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --with-isl=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --enable-lto --enable-target-optspace --without-long-double-128 --disable-nls --enable-multiarch --enable-languages=c c++ --disable-libstdcxx-verbose --enable-threads=posix --enable-gcov-custom-rtio --enable-libstdcxx-time=yes]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 8.4.0 (crosstool-NG esp-2020r3) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_d74ad.dir/CMakeCXXCompilerABI.cpp.obj' '-c']
-  ignore line: [ c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/cc1plus.exe -quiet -v -iprefix c:\users\neuro\.platformio\packages\toolchain-xtensa32\bin\../lib/gcc/xtensa-esp32-elf/8.4.0/ C:/Users/neuro/.platformio/packages/tool-cmake/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mlongcalls -auxbase-strip CMakeFiles/cmTC_d74ad.dir/CMakeCXXCompilerABI.cpp.obj -Wno-frame-address -version -o C:\Users\neuro\AppData\Local\Temp\cccNjTsR.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles\cmTC_d3836.dir\CMakeCXXCompilerABI.cpp.obj' '-c']
+  ignore line: [ c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/cc1plus.exe -quiet -v -iprefix c:\users\neuro\.platformio\packages\toolchain-xtensa32\bin\../lib/gcc/xtensa-esp32-elf/8.4.0/ C:\Users\neuro\.platformio\packages\tool-cmake\share\cmake-3.16\Modules\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mlongcalls -auxbase-strip CMakeFiles\cmTC_d3836.dir\CMakeCXXCompilerABI.cpp.obj -Wno-frame-address -version -o C:\Users\neuro\AppData\Local\Temp\ccchsHrO.s]
   ignore line: [GNU C++14 (crosstool-NG esp-2020r3) version 8.4.0 (xtensa-esp32-elf)]
   ignore line: [	compiled by GNU C version 6.3.0 20170516  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version isl-0.19-GMP]
   ignore line: []
@@ -327,18 +363,18 @@ Parsed CXX implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 309c4ac8ccececaa8ae2cac93e8d6204]
-  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_d74ad.dir/CMakeCXXCompilerABI.cpp.obj' '-c']
-  ignore line: [ c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/bin/as.exe --traditional-format --longcalls -o CMakeFiles/cmTC_d74ad.dir/CMakeCXXCompilerABI.cpp.obj C:\Users\neuro\AppData\Local\Temp\cccNjTsR.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles\cmTC_d3836.dir\CMakeCXXCompilerABI.cpp.obj' '-c']
+  ignore line: [ c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/bin/as.exe --traditional-format --longcalls -o CMakeFiles\cmTC_d3836.dir\CMakeCXXCompilerABI.cpp.obj C:\Users\neuro\AppData\Local\Temp\ccchsHrO.s]
   ignore line: [COMPILER_PATH=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/]
   ignore line: [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/]
   ignore line: [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/bin/]
   ignore line: [LIBRARY_PATH=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/]
   ignore line: [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/]
   ignore line: [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles/cmTC_d74ad.dir/CMakeCXXCompilerABI.cpp.obj' '-c']
-  ignore line: [[2/2] Linking CXX executable cmTC_d74ad]
+  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'CMakeFiles\cmTC_d3836.dir\CMakeCXXCompilerABI.cpp.obj' '-c']
+  ignore line: [[2/2] Linking CXX executable cmTC_d3836]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=C:\Users\neuro\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-g++.exe]
+  ignore line: [COLLECT_GCC=xtensa-esp32-elf-g++]
   ignore line: [COLLECT_LTO_WRAPPER=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/lto-wrapper.exe]
   ignore line: [Target: xtensa-esp32-elf]
   ignore line: [Configured with: /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-host_w64-mingw32 --target=xtensa-esp32-elf --prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf --with-local-prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf --with-headers=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/include --with-newlib --enable-threads=no --disable-shared --with-pkgversion='crosstool-NG esp-2020r3' --disable-__cxa_atexit --enable-cxx-flags=-ffunction-sections --disable-libgomp --disable-libmudflap --disable-libmpx --disable-libssp --disable-libquadmath --disable-libquadmath-support --with-gmp=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --with-mpfr=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --with-mpc=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --with-isl=/builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp32-elf/buildtools/complibs-host --enable-lto --enable-target-optspace --without-long-double-128 --disable-nls --enable-multiarch --enable-languages=c c++ --disable-libstdcxx-verbose --enable-threads=posix --enable-gcov-custom-rtio --enable-libstdcxx-time=yes]
@@ -350,27 +386,27 @@ Parsed CXX implicit link information from above output:
   ignore line: [LIBRARY_PATH=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/]
   ignore line: [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/]
   ignore line: [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_d74ad']
-  link line: [ c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/collect2.exe -plugin c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/liblto_plugin-0.dll -plugin-opt=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\neuro\AppData\Local\Temp\ccAB0ESX.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -o cmTC_d74ad c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib/crt0.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crti.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtbegin.o -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0 -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_d74ad.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lc -lnosys -lc -lgcc c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtend.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_d3836']
+  link line: [ c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/collect2.exe -plugin c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/liblto_plugin-0.dll -plugin-opt=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\neuro\AppData\Local\Temp\ccIHWji8.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -o cmTC_d3836 c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib/crt0.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crti.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtbegin.o -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0 -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc -Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib CMakeFiles\cmTC_d3836.dir\CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lc -lnosys -lc -lgcc c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtend.o c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtn.o]
     arg [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/collect2.exe] ==> ignore
     arg [-plugin] ==> ignore
     arg [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/liblto_plugin-0.dll] ==> ignore
     arg [-plugin-opt=c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../libexec/gcc/xtensa-esp32-elf/8.4.0/lto-wrapper.exe] ==> ignore
-    arg [-plugin-opt=-fresolution=C:\Users\neuro\AppData\Local\Temp\ccAB0ESX.res] ==> ignore
+    arg [-plugin-opt=-fresolution=C:\Users\neuro\AppData\Local\Temp\ccIHWji8.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
     arg [-plugin-opt=-pass-through=-lnosys] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_d74ad] ==> ignore
+    arg [cmTC_d3836] ==> ignore
     arg [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib/crt0.o] ==> ignore
     arg [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crti.o] ==> ignore
     arg [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/crtbegin.o] ==> ignore
     arg [-Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0] ==> dir [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0]
     arg [-Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc] ==> dir [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc]
     arg [-Lc:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib] ==> dir [c:/users/neuro/.platformio/packages/toolchain-xtensa32/bin/../lib/gcc/xtensa-esp32-elf/8.4.0/../../../../xtensa-esp32-elf/lib]
-    arg [CMakeFiles/cmTC_d74ad.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+    arg [CMakeFiles\cmTC_d3836.dir\CMakeCXXCompilerABI.cpp.obj] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc] ==> lib [gcc]
