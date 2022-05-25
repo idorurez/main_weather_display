@@ -53,8 +53,8 @@
 
 #include <MySQL_Generic_Encrypt_Sha1.h>
 
-#define MAX_CONNECT_ATTEMPTS      10
-#define CONNECT_DELAY_MS          2000
+#define MAX_CONNECT_ATTEMPTS      20
+#define CONNECT_DELAY_MS          3000
 #define SUCCESS                   1
 
 /*

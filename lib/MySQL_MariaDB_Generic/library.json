@@ -33,33 +33,9 @@
   [
     {
       "owner": "khoih-prog",
-      "name": "WiFiNINA_Generic",
-      "version": "^1.8.14-3",
-      "platforms": ["*"]
-    },
-    {
-      "owner": "khoih-prog",
       "name": "WebServer_WT32_ETH01",
       "version": ">=1.4.1",
       "platforms": ["*"]
-    },
-    {
-      "owner": "khoih-prog",
-      "name": "ESP8266_AT_WebServer",
-      "version": "^1.5.3",
-      "platforms": ["*"]
-    },
-    {
-      "owner": "stm32duino",
-      "name": "STM32duino LwIP",
-      "version": ">=2.1.2",
-      "platforms": ["ststm32"]
-    },
-    {
-      "owner": "stm32duino",
-      "name": "STM32Ethernet",
-      "version": ">=1.2.0",
-      "platforms": ["ststm32"]
     },
     {
       "owner": "uipethernet",

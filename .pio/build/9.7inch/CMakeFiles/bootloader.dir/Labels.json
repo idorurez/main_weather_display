@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/neuro/dev/main_weather_display/.pio/build/9.7inch/CMakeFiles/bootloader"
+		},
+		{
+			"file" : "C:/Users/neuro/dev/main_weather_display/.pio/build/9.7inch/CMakeFiles/bootloader.rule"
+		},
+		{
+			"file" : "C:/Users/neuro/dev/main_weather_display/.pio/build/9.7inch/CMakeFiles/bootloader-complete.rule"
+		},
+		{
+			"file" : "C:/Users/neuro/dev/main_weather_display/.pio/build/9.7inch/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+		},
+		{
+			"file" : "C:/Users/neuro/dev/main_weather_display/.pio/build/9.7inch/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/neuro/dev/main_weather_display/.pio/build/9.7inch/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+		},
+		{
+			"file" : "C:/Users/neuro/dev/main_weather_display/.pio/build/9.7inch/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+		},
+		{
+			"file" : "C:/Users/neuro/dev/main_weather_display/.pio/build/9.7inch/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+		},
+		{
+			"file" : "C:/Users/neuro/dev/main_weather_display/.pio/build/9.7inch/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+		},
+		{
+			"file" : "C:/Users/neuro/dev/main_weather_display/.pio/build/9.7inch/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"bootloader"
+		],
+		"name" : "bootloader"
+	}
+}

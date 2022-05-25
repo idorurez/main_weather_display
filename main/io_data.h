@@ -4,7 +4,7 @@
 #include "forecast_record.h"
 
 // void wifiConnect(void);
-std::string get_local_weather_data(Weather_station_data * data, WiFiClient & client);
+std::string get_local_weather_data(Weather_station_data * data);
 Weather_station_data* parse_local_data(Weather_station_data * wsd_vals, std::string response);
 
 #endif
