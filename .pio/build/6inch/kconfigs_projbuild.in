@@ -1,0 +1,6 @@
+source "C:/Users/neuro/.platformio/packages/framework-espidf/components/app_update/Kconfig.projbuild"
+source "C:/Users/neuro/.platformio/packages/framework-espidf/components/bootloader/Kconfig.projbuild"
+source "C:/Users/neuro/.platformio/packages/framework-espidf/components/esp_rom/Kconfig.projbuild"
+source "C:/Users/neuro/.platformio/packages/framework-espidf/components/esptool_py/Kconfig.projbuild"
+source "C:/Users/neuro/.platformio/packages/framework-espidf/components/partition_table/Kconfig.projbuild"
+source "C:/Users/neuro/.platformio/packages/framework-arduinoespressif32-src-586abe115109b3312f84a66e65c39ea3/Kconfig.projbuild"

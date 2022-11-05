@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "esp-idf/framework-arduinoespressif32-src-586abe115109b3312f84a66e65c39ea3",
+		"source" : "C:/Users/neuro/.platformio/packages/framework-arduinoespressif32-src-586abe115109b3312f84a66e65c39ea3"
+	}
+}

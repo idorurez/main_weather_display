@@ -149,6 +149,30 @@ Weather_station_data* parse_local_data(Weather_station_data * wsd_vals, std::str
     index++;
     ptr = strtok(NULL, ",");
   }
+  // wsd_vals[0].time_stamp = parsed[0];
+  // wsd_vals[0].tempF = std::stof(parsed[1]);
+  // wsd_vals[0].windDir = std::stod(parsed[2]);
+  // wsd_vals[0].windCardDir = parsed[3];
+  // wsd_vals[0].windSpeed = std::stof(parsed[4]);
+  // wsd_vals[0].rain = std::stof(parsed[5]);
+  // wsd_vals[0].uvIndex = std::stof(parsed[6]);
+  // wsd_vals[0].visLight = std::stof(parsed[7]);
+  // wsd_vals[0].infLight = std::stof(parsed[8]);
+  // wsd_vals[0].bsecRawTemp = std::stof(parsed[9]);
+  // wsd_vals[0].bsecRawHumidity = std::stof(parsed[10]);
+  // wsd_vals[0].bsecTemp = std::stof(parsed[11]);
+  // wsd_vals[0].bsecHumidity = std::stof(parsed[12]);
+  // wsd_vals[0].bsecPressure = std::stof(parsed[13]);
+  // wsd_vals[0].bsecGasResistance = std::stof(parsed[14]);
+  // wsd_vals[0].bsecIaq = std::stof(parsed[15]);
+  // wsd_vals[0].bsecIaqAccuracy = std::stof(parsed[16]);
+  // wsd_vals[0].bsecStaticIaq = std::stof(parsed[17]);
+  // wsd_vals[0].bsecCo2Equiv = std::stof(parsed[18]);
+  // wsd_vals[0].bsecBreathVocEquiv = std::stof(parsed[19]);
+  // wsd_vals[0].lux = std::stof(parsed[20]);
+  // wsd_vals[0].batteryVoltage = std::stof(parsed[21]);
+  // wsd_vals[0].buildVer = std::stof(parsed[22]);
+
   wsd_vals[0].time_stamp = parsed[0];
   wsd_vals[0].tempF = std::stof(parsed[1]);
   wsd_vals[0].windDir = std::stod(parsed[2]);
@@ -172,6 +196,7 @@ Weather_station_data* parse_local_data(Weather_station_data * wsd_vals, std::str
   wsd_vals[0].bsecCo2Equiv = std::stof(parsed[20]);
   wsd_vals[0].bsecBreathVocEquiv = std::stof(parsed[21]);
   wsd_vals[0].buildVer = std::stof(parsed[22]);
+
 
   return wsd_vals;
 }

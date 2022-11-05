@@ -113,9 +113,9 @@ extern const EpdWaveform epdiy_ED133UT2;
 
 /// Font data stored PER GLYPH
 typedef struct {
-  uint8_t width;            ///< Bitmap dimensions in pixels
-  uint8_t height;           ///< Bitmap dimensions in pixels
-  uint8_t advance_x;        ///< Distance to advance cursor (x axis)
+  uint16_t width;            ///< Bitmap dimensions in pixels
+  uint16_t height;           ///< Bitmap dimensions in pixels
+  uint16_t advance_x;        ///< Distance to advance cursor (x axis)
   int16_t left;             ///< X dist from cursor pos to UL corner
   int16_t top;              ///< Y dist from cursor pos to UL corner
   uint16_t compressed_size; ///< Size of the zlib-compressed font data.
@@ -136,7 +136,7 @@ typedef struct {
   const EpdUnicodeInterval *intervals; ///< Valid unicode intervals for this font
   uint32_t interval_count;    ///< Number of unicode intervals.
   bool compressed;            ///< Does this font use compressed glyph bitmaps?
-  uint8_t advance_y;          ///< Newline distance (y axis)
+  int advance_y;          ///< Newline distance (y axis)
   int ascender;               ///< Maximal height of a glyph above the base line
   int descender;              ///< Maximal height of a glyph below the base line
 } EpdFont;
