@@ -414,7 +414,7 @@
                 "ARDUINO_BOARD=\"ESP32_DEV\"",
                 "ARDUINO_VARIANT=\"esp32\"",
                 "ESP32",
-                "PLATFORMIO=60105",
+                "PLATFORMIO=60106",
                 "ARDUINO_ESP32_DEV",
                 "BOARD_HAS_PSRAM",
                 "CONFIG_EPD_DISPLAY_TYPE_ED060XC3",
