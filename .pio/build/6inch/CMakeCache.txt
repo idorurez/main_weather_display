@@ -259,9 +259,6 @@ LINK_WITH_TRUSTED_STORAGE:BOOL=OFF
 //Compiler warnings treated as errors
 MBEDTLS_FATAL_WARNINGS:BOOL=ON
 
-//Path to a program.
-MCONF:FILEPATH=C:/Users/neuro/.platformio/packages/tool-mconf/mconf-idf.exe
-
 //No help, variable specified on the command line.
 PYTHON:UNINITIALIZED=C:\Users\neuro\.platformio\penv\Scripts\python.exe
 
@@ -269,7 +266,7 @@ PYTHON:UNINITIALIZED=C:\Users\neuro\.platformio\penv\Scripts\python.exe
 PYTHON_DEPS_CHECKED:UNINITIALIZED=1
 
 //No help, variable specified on the command line.
-SDKCONFIG:UNINITIALIZED=C:\Users\neuro\dev\main_weather_display\sdkconfig.6inch
+SDKCONFIG:UNINITIALIZED=c:\Users\neuro\dev\main_weather_display\sdkconfig.6inch
 
 //Allow unsafe builds. These builds ARE NOT SECURE.
 UNSAFE_BUILD:BOOL=OFF
@@ -282,9 +279,6 @@ USE_SHARED_MBEDTLS_LIBRARY:BOOL=OFF
 
 //Build mbed TLS static library.
 USE_STATIC_MBEDTLS_LIBRARY:BOOL=ON
-
-//Path to a program.
-WINPTY:FILEPATH=WINPTY-NOTFOUND
 
 //Dependencies for the target
 __idf___pio_env_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_newlib;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_lwip;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;

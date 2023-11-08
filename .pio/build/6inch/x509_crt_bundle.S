@@ -1,4 +1,4 @@
-/* * Data converted from C:\Users\neuro\dev\main_weather_display\.pio\build\6inch\x509_crt_bundle
+/* * Data converted from c:\Users\neuro\dev\main_weather_display\.pio\build\6inch\x509_crt_bundle
  */
 .data
 .section .rodata.embedded

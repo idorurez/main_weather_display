@@ -244,9 +244,6 @@ IDF_TOOLCHAIN:STRING=gcc
 //No help, variable specified on the command line.
 LEGACY_INCLUDE_COMMON_HEADERS:UNINITIALIZED=
 
-//Path to a program.
-MCONF:FILEPATH=C:/Users/neuro/.platformio/packages/tool-mconf/mconf-idf.exe
-
 //No help, variable specified on the command line.
 PYTHON:UNINITIALIZED=C:\Users\neuro\.platformio\penv\Scripts\python.exe
 
@@ -254,10 +251,7 @@ PYTHON:UNINITIALIZED=C:\Users\neuro\.platformio\penv\Scripts\python.exe
 PYTHON_DEPS_CHECKED:UNINITIALIZED=1
 
 //No help, variable specified on the command line.
-SDKCONFIG:UNINITIALIZED=C:\Users\neuro\dev\main_weather_display\sdkconfig.6inch
-
-//Path to a program.
-WINPTY:FILEPATH=WINPTY-NOTFOUND
+SDKCONFIG:UNINITIALIZED=c:\Users\neuro\dev\main_weather_display\sdkconfig.6inch
 
 //Dependencies for the target
 __idf_bootloader_support_LIB_DEPENDS:STATIC=general;__idf_log;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_hw_support;general;__idf_hal;general;__idf_esp32;
